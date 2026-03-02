@@ -1,8 +1,14 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 4
+order: 1
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+Hello! I am a 4th year student at the Illinois Institute of Technology where I’m pursuing a B.S. in Aerospace Engineering and a M.S. in Autonomous Systems and Robotics. Throughout my time at IIT, I am fortunate to get involved with multiple research projects, engineering competitions, and internships. I’m looking to contribute to aerospace science and interesting robotics problems!
+
+Currently, my interests lie in field robotics, guidance navigation and control (GNC), and adaptive control.
+
+# Experience
+
+{% include experience.html %}
+

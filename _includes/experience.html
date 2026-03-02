@@ -1,0 +1,33 @@
+<!-- Pull `_data/experience.yml` and put it in timeline format (similar to `archives`) -->
+
+{% include lang.html %}
+
+{% assign df_strftime_m = site.data.locales[lang].df.archives.strftime | default: '/ %m' %}
+{% assign df_dayjs_m = site.data.locales[lang].df.archives.dayjs | default: '/ MM' %}
+
+<div id="experiences" class="pl-xl-3">
+  {% assign sorted_jobs = site.data.experience | sort: 'date' | reverse %}
+  {% for job in sorted_jobs %}
+    {% assign cur_year = job.date | date: '%Y' %}
+
+    {% if cur_year != last_year %}
+      {% unless forloop.first %}</ul>{% endunless %}
+
+      <time class="year lead d-block">{{ cur_year }}</time>
+      {{ '<ul class="list-unstyled">' }}
+
+      {% assign last_year = cur_year %}
+    {% endif %}
+
+    <li>
+      {% assign ts = job.date | date: '%s' %}
+      <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="{{ df_dayjs_m }}">
+        {{ job.date | date: df_strftime_m }}
+      </span>
+      <a href="{{ job.url | relative_url }}">{{ job.role }}</a>
+    </li>
+
+    {% if forloop.last %}</ul>{% endif %}
+  {% endfor %}
+</div>
+  
