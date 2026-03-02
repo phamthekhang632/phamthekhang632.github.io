@@ -1,6 +1,12 @@
 # For unknown date or month, use 01
 # TODO: include start and end date
 
+- role: Robotics Software Engineer
+  company: Joint Robotics Laboratory, AIST
+  date: 2026-01-20
+  description: 
+  url: https://unit.aist.go.jp/isri/isri-jrl/en/
+
 - role: Graduate Research Assistant
   company: Robotics Lab, Illinois Institute of Technology
   date: 2024-08-01
