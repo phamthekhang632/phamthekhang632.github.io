@@ -10,7 +10,6 @@
 
 /* append your custom style below */
 @use './abstracts/breakpoints' as bp;
-@use './abstracts/placeholders';
 
 @media (prefers-color-scheme: light) {
   html:not([data-mode]),
@@ -106,6 +105,7 @@
       @extend %text-ellipsis;
 
       &:nth-child(odd) {
+        background-color: var(--main-bg, #ffffff);
         background-image: linear-gradient(
           to left,
           var(--experience-gradient-edge),
