@@ -12,14 +12,30 @@
 @use './abstracts/breakpoints' as bp;
 @use './abstracts/placeholders';
 
-:root {
-  --experience-gradient-edge: #ffffff;
-  --experience-gradient-center: #fbfbfb;
+@media (prefers-color-scheme: light) {
+  html:not([data-mode]),
+  html[data-mode='light'] {
+    --experience-gradient-edge: #ffffff;
+    --experience-gradient-center: #fbfbfb;
+  }
+
+  html[data-mode='dark'] {
+    --experience-gradient-edge: rgb(26 26 30);
+    --experience-gradient-center: rgb(39 39 45);
+  }
 }
 
-[data-mode='dark'] {
-  --experience-gradient-edge: rgb(26 26 30);
-  --experience-gradient-center: rgb(39 39 45);
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]),
+  html[data-mode='dark'] {
+    --experience-gradient-edge: rgb(26 26 30);
+    --experience-gradient-center: rgb(39 39 45);
+  }
+
+  html[data-mode='light'] {
+    --experience-gradient-edge: #ffffff;
+    --experience-gradient-center: #fbfbfb;
+  }
 }
 
 #experiences {
