@@ -1,5 +1,5 @@
 ---
-title: "Experiment Deep Q-Learning with Gymnasium Lunar Lander"
+title: Experiment Deep Q-Learning with Gymnasium Lunar Lander
 description: >-
   Landing a lunar shuttle in simulated environment using reinforcement learning
 author: khang
@@ -8,9 +8,9 @@ categories: [Engineering] # Maximum 2 entries
 tags: [reinforcement learning]
 media_subpath: /assets/img/moon-landing
 image:
-   path: environment.png
-   alt: Simulated environment
-   lqip:
+  path: environment.jpg
+  alt: Simulated environment
+  lqip: lqip/environment.jpg
 ---
 
 This was my first attempt to learn reinforcement learning. The agent was trained to land a space shuttle in a randomly generated environment.
@@ -19,8 +19,8 @@ I started by learning Q-Learning through a project on solving Blackjack. However
 
 {% include img-row.html
   per_row=2
-  src_1='reward.png' alt_1='Episode rewards'
-  src_2='duration.png' alt_2='Episode durations' 
+  src_1='reward.jpg' alt_1='Episode rewards'
+  src_2='duration.jpg' alt_2='Episode durations' 
 %}
 
 As shown above, after about 200 episodes, the agent learned how to land the shuttle reliably. Additionally, since I added the punishment for using too much fuel, the agent also learned to land the shuttle more confidently (200 frames vs. 900 frames). 
