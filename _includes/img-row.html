@@ -1,0 +1,26 @@
+{%- comment -%}
+Example:
+
+  {% include img-row.html
+     per_row=2
+     src_1='reward.png' alt_1='Episode rewards'
+     src_2='duration.png' alt_2='Episode durations' %}
+{%- endcomment -%}
+
+{% assign max_check = 10 %}
+
+<div class="img-row-{{ include.per_row | default: 2 }}">
+  {% for i in (1..max_check) %}
+    {% assign key = "src_" | append: i %}
+    {% if include[key] %}
+      <div>
+        <img
+          src="{{ include[key] }}"
+          alt="{{ include["alt_" | append: i] | default: "" }}"
+        >
+      </div>
+    {% else %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+</div>
